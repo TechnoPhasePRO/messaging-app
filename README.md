@@ -26,7 +26,7 @@ This project primarily focuses on the backend component of a messaging applicati
 
 - `index.js`: Entry point of the application.
 - `routes/`: Contains route definitions for different API endpoints.
-- `controllers/`: Contains controller functions for handling business logic.
+- `controllers/`: Contains controller functions for different API endpoints.
 - `models/`: Contains MongoDB schema definitions for user profiles, messages, and group chats.
 - `middlewares/`: Contains middleware functions, including authentication middleware.
 - `config/`: Contains configuration files, including JWT secret key and database connection settings.
