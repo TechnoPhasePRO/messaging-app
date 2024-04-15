@@ -1,0 +1,146 @@
+{
+    "info": {
+      "_postman_id": "23f7fe31-070c-41bf-90e5-ec49ec5e4299",
+      "name": "Messaging API Documentation",
+      "description": "API documentation for messaging application endpoints",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "User Management",
+        "item": [
+          {
+            "name": "Register User",
+            "request": {
+              "method": "POST",
+              "url": "http://localhost:3000/api/user/register",
+              "description": "Register a new user",
+              "body": {
+                "mode": "raw",
+                "raw": "{\"username\": \"Yash\", \"email\": \"yash-dev@yopmail.com\", \"password\": \"123@321\"}"
+              }
+            },
+            "response": [
+              {
+                "name": "Successful Registration",
+                "code": 200,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"message\": \"User registered successfully\"}"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Login User",
+            "request": {
+              "method": "POST",
+              "url": "http://localhost:3000/api/user/login",
+              "description": "Login user",
+              "body": {
+                "mode": "raw",
+                "raw": "{\"username\": \"Yash\", \"password\": \"123@321\"}"
+              }
+            },
+            "response": [
+              {
+                "name": "Successful Login",
+                "code": 200,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ilhhc2giLCJpYXQiOjE1MTYyMzkwMjJ9.9dWTHABs2XRlkGm7VifNji5EJgj1JwrA7pQHQiJ1Dg8\"}"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Get User Profile",
+            "request": {
+              "method": "GET",
+              "url": "http://localhost:3000/api/user/profile",
+              "description": "Get user profile",
+              "headers": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ilhhc2giLCJpYXQiOjE1MTYyMzkwMjJ9.9dWTHABs2XRlkGm7VifNji5EJgj1JwrA7pQHQiJ1Dg8"
+                }
+              ]
+            },
+            "response": [
+              {
+                "name": "User Profile",
+                "code": 200,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"username\": \"Yash\", \"email\": \"yash-dev@yopmail.com\", \"name\": \"Yash\", \"profilePicture\": \"http://example.com/profile.jpg\"}"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Update User Profile",
+            "request": {
+              "method": "PUT",
+              "url": "http://localhost:3000/api/user/profile",
+              "description": "Update user profile",
+              "headers": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ilhhc2giLCJpYXQiOjE1MTYyMzkwMjJ9.9dWTHABs2XRlkGm7VifNji5EJgj1JwrA7pQHQiJ1Dg8"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\": \"New Name\", \"email\": \"newemail@example.com\"}"
+              }
+            },
+            "response": [
+              {
+                "name": "Profile Updated",
+                "code": 200,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"message\": \"User profile updated successfully\"}"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Update Profile Picture",
+            "request": {
+              "method": "PUT",
+              "url": "http://localhost:3000/api/user/profile-picture",
+              "description": "Update user profile picture",
+              "headers": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ilhhc2giLCJpYXQiOjE1MTYyMzkwMjJ9.9dWTHABs2XRlkGm7VifNji5EJgj1JwrA7pQHQiJ1Dg8"
+                }
+              ],
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "profilePicture",
+                    "type": "file",
+                    "src": "example.jpg"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "name": "Profile Picture Updated",
+                "code": 200,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"message\": \"Profile picture updated successfully\"}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
